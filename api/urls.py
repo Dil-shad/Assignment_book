@@ -15,7 +15,9 @@ urlpatterns = [
     path('get_books', views.get_books, name='get_books'),#filter
     #--------------------------------------------------------------------#
     path('RegisterUser',views.RegisterUser,name='RegisterUser'),
-    path('login/',obtain_auth_token,name='login')
+    path('login/',obtain_auth_token,name='login'),
+    path('welcome',views.Welcome,name='welcome'),
+
 
 
 

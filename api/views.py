@@ -1,9 +1,8 @@
-from turtle import title
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-
+from rest_framework.permissions import IsAuthenticated
 from .models import GenreModel, eBook
 from .serializers import Genresserializer, eBookserializer, UserRegSerializer
 
@@ -116,4 +115,11 @@ def RegisterUser(request):
     return Response(data)
  
 
- 
+
+@api_view(['GET'])
+def Welcome(request):
+    permission_classes=(IsAuthenticated,)
+    content={"user":str(request.user),"userid":str(request.user.id)}
+    return Response(content)
+
+
