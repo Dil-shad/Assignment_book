@@ -19,6 +19,7 @@ class eBookserializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+
 class UserRegSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(
         style={'input_type': 'password'}, write_only=True)

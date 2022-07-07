@@ -15,9 +15,10 @@ def apiOverview(request):
         'Create': '/genre-create/' + '/ebook-create/',
         'Update': '/book-update/<int:pk>',
         'Delete': '/book-delete/<int:pk>',
-        'filter': '/get_books/' , # ?genre=Fantasy
+        'filter by genre,i.e ?genre=Fantasy': '/get_books/',
         'Register':'/RegisterUser/',
         'login':'/login/',
+        'Authorization':'/welcome/',
     }
     return Response(api_urls)
 
@@ -63,7 +64,7 @@ def Book_Details(request, pk):
 
 
 # Update eBook
-@api_view(['POST'])
+@api_view(['PATCH',"PUT"])
 def Book_Update(request, pk):
     qs = eBook.objects.filter(id=pk).first()
     serializer = eBookserializer(instance=qs, data=request.data)
