@@ -1,6 +1,6 @@
 # Assignment_book
 
-# steps for run this project
+# Steps for run this project
 
 virtual env
 #after activating virtual env 
