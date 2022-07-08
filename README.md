@@ -9,20 +9,13 @@ virtual env
 -"python manage.py runserver"
 
 
+when you open the server you'll get a api Overview.
+
+
 -superuser:admin
     pasword:admin
     
-   api_urls = {
-        'list': '/book-list/',
-        'Detail View': '/book-details/<int:pk>',
-        'Create': '/genre-create/' + '/ebook-create/',
-        'Update': '/book-update/<int:pk>',
-        'Delete': '/book-delete/<int:pk>',
-        'filter by genre,i.e ?genre=Fantasy': '/get_books/',
-        'Register':'/RegisterUser/',
-        'login':'/login/',
-        'Authorization':'/welcome/',
-    }
+  
     
 - you can test API using tests.py file or Postman.
 exiting User=
